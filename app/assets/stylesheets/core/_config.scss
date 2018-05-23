@@ -1,0 +1,92 @@
+$titlefont: Helvetica, sans-serif;
+$textfont: Helvetica, Arial, sans-serif;
+$white: #fff;
+$black: #000;
+$lite-gray: #ececec;
+$gray: #ccc;
+$middle-gray: #666;
+$dark-gray: #333;
+
+
+// Bootstrap config
+$brand-primary: #5ca2d5;
+$brand-success: #3ba019;
+
+$link-color: #5ca2d5;
+$link-hover-color: lighten($link-color, 10%);
+$body-bg: $lite-gray;
+$font-family-base: $titlefont;
+
+$headings-color: $dark-gray;
+$headings-font-family: $titlefont;
+
+$navbar-inverse-brand-hover-bg:  $brand-primary;
+$navbar-height:                  80px;
+$navbar-margin-bottom:           0;
+$navbar-border-radius:           0;
+$navbar-inverse-color:           $white;
+$navbar-inverse-bg:              $black;
+$navbar-inverse-border:          lighten($black, 29.8039%);
+$navbar-inverse-link-color:      $white;
+$nav-link-padding:               10px 30px;
+$navbar-search-panel-bg:         lighten($black, 29.8039%);
+$navbar-inverse-link-active-bg:  transparent;
+
+$btn-default-color:         $white;
+$btn-default-bg:            #696969;
+$btn-default-border:        #696969;
+$btn-border-radius-base:    0;
+$border-radius-large:       0;
+$border-radius-small:       0;
+$input-border-radius:       0;
+$padding-base-vertical:     8px;
+$padding-base-horizontal:   18px;
+
+$grid-float-breakpoint: 200px;
+
+$screen-lg-max: 1370px;
+$grid-lg-max: 1440px;
+
+$jumbotron-padding: 0;
+$jumbotron-bg: $black;
+
+$well-bg: #262626;
+$well-padding: 20px;
+
+$input-height-large: 55px;
+$input-color: $black;
+$input-border-focus: $gray;
+
+$panel-danger-text:           $white;
+$panel-danger-heading-bg:     $brand-primary;
+$panel-bg: #262626;
+$panel-heading-padding: 15px 30px;
+
+// Spinner
+$input-spinner-size: 18px;
+
+// Share
+$share-button-size: 30px;
+
+// Sidebar
+$sidebar-min-width: 250px;
+$sidebar-max-width: 20%;
+$sidebar-bg: $gray;
+$sidebar-text-color: #d3d3d3;
+
+// Footer
+$footer-bg: $gray;
+$footer-link-color: #aaa;
+$footer-btn-bg: #535353;
+$footer-input-bg: #ebebeb;
+$footer-icons-color: #b8b8b8;
+$footer-icon-size: 40px;
+
+// Header. Logo
+$logo-vertical-height: 200px;
+$logo-vertical-width: 155px;
+
+// Borders
+$banner-border-color: #484848;
+$default-border-color: #999;
+$hr-border-color: #242424;
