@@ -1,0 +1,15 @@
+.navbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  text-align: right;
+
+  border: 0;
+  background: $navbar-bg;
+  box-shadow: 0 1px 0 0 rgba($lite-gray, .3);
+
+  font-size: 16px;
+}

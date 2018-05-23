@@ -1,0 +1,5 @@
+nav.navbar
+  - if user_signed_in?
+    p = current_user.email
+
+    p = link_to "sign out", destroy_user_session_path, method: "DELETE"
