@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   # Website
   get "/home/" => 'home#index', as: :home
   get "/" => 'home#index', as: :website_home
+
+  namespace :api do
+    namespace :v1 do
+      resources :expenses, only: [:index, :create]
+    end
+  end
 end

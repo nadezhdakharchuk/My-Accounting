@@ -14,7 +14,7 @@ gem 'puma', '~> 3.11'
 # gem 'mini_racer', platforms: :ruby
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'webpacker', '~> 3.5'
 
@@ -31,6 +31,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'slim-rails'
 gem 'devise'
+gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

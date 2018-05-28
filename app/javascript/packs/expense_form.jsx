@@ -5,7 +5,7 @@ class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: "12/12/18",
+      date: "12/12/2018",
       amount: "500",
       comment: "lunch"
     };
@@ -29,12 +29,19 @@ class ExpenseForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("Date: " + this.state.date + ",\nAmount: " + this.state.amount + ",\nComment: " + this.state.comment);
+    event.preventDefault();
+    $.ajax({
+      url: "/api/v1/expenses",
+      method: "POST",
+      data: {
+        expense: this.state
+      }
+    });
   }
 
   render() {
     return (
-      <form className="form-row" onSubmit={this.handleSubmit} action="/expenses" method="post">
+      <form className="form-row" onSubmit={this.handleSubmit}>
         <h2 className="form-group">Expense</h2>
         <div className="row">
           <div className="col-md-4 form-group">
