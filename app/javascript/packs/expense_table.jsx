@@ -11,8 +11,6 @@ class ExpenseTable extends React.Component {
   }
 
   componentDidMount() {
-    let expensesData = null;
-
     $.ajax({
       url: "/api/v1/expenses",
       method: "GET",
@@ -28,32 +26,23 @@ class ExpenseTable extends React.Component {
 
   render() {
     return (
-      <table className="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Comment</th>
-          </tr>
-        </thead>
-        <tbody>
-          { this.state.data.map(function(item, key) {
-              return (
-                <tr key = {key}>
-                  <td>{item.id}</td>
-                  <td>{item.date}</td>
-                  <td>{item.amount}</td>
-                  <td>{item.comment}</td>
-                </tr>
-              )}
-           )}
-        </tbody>
-      </table>
+      <div className="content-table__tbody">
+        { this.state.data.map(function(item, key) {
+            return (
+              <div className="content-table__tr" id = {item.id}>
+                <div className="content-table__td">{item.id}</div>
+                <div className="content-table__td">{item.date}</div>
+                <div className="content-table__td">{item.amount}</div>
+                <div className="content-table__td">{item.comment}</div>
+                <div className="content-table__td">
+                  <a href="#">Edit</a>
+                </div>
+              </div>
+            )}
+         )}
+      </div>
     );
   }
 }
 
-document.addEventListener("DOMContentLoaded", e => {
-  ReactDOM.render(<ExpenseTable />, document.getElementById("table"))
-})
+export default ExpenseTable

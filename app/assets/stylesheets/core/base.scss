@@ -1,6 +1,7 @@
 body {
-  padding-top: $navbar-height;
+  padding-top: $navbar-height + 40px;
 
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
 }
+

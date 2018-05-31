@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import ExpenseTable from "./expense_table"
 
 class ExpenseForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class ExpenseForm extends React.Component {
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleAmountChange = this.handleAmountChange.bind(this);
     this.handleCommentChange = this.handleCommentChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleDateChange(event) {
@@ -28,41 +28,45 @@ class ExpenseForm extends React.Component {
     this.setState({ comment: event.target.value });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    $.ajax({
-      url: "/api/v1/expenses",
-      method: "POST",
-      data: {
-        expense: this.state
-      }
-    });
-  }
-
   render() {
     return (
-      <form className="form-row" onSubmit={this.handleSubmit}>
-        <h2 className="form-group">Expense</h2>
-        <div className="row">
-          <div className="col-md-4 form-group">
-            <label className="control-label" htmlFor="date">
+      <form className="content-table__thead" onSubmit={(event) => this.props.submit(event, this.state)}>
+        <div className="content-table__tr">
+          <div className="content-table__th">
+            <label className="control-label">
+              ID
+            </label>
+          </div>
+          <div className="content-table__th">
+            <label className="control-label" htmlFor="amount">
               Date:
             </label>
-            <input id="date" type="text" value={this.state.date} className="form-control" onChange={this.handleDateChange} />
           </div>
-          <div className="col-md-4 form-group">
+          <div className="content-table__th">
             <label className="control-label" htmlFor="amount">
               Amount:
             </label>
-            <input id="amount" type="text" value={this.state.amount} className="form-control" onChange={this.handleAmountChange} />
           </div>
-          <div className="col-md-4 form-group">
+          <div className="content-table__th">
             <label className="control-label" htmlFor="comment">
               Comment:
             </label>
+          </div>
+          <div className="content-table__th">
+          </div>
+        </div>
+        <div className="content-table__tr">
+          <div className="content-table__th"></div>
+          <div className="content-table__th">
+            <input id="date" type="text" value={this.state.date} className="form-control" onChange={this.handleDateChange} />
+          </div>
+          <div className="content-table__th">
+            <input id="amount" type="text" value={this.state.amount} className="form-control" onChange={this.handleAmountChange} />
+          </div>
+          <div className="content-table__th">
             <input id="comment" type="text" value={this.state.comment} className="form-control" onChange={this.handleCommentChange} />
           </div>
-          <div className="col-md-12 form-group">
+          <div className="content-table__th">
             <input type="submit" value="Submit" className="btn btn-primary" />
           </div>
         </div>
@@ -71,6 +75,9 @@ class ExpenseForm extends React.Component {
   }
 }
 
-document.addEventListener("DOMContentLoaded", e => {
-  ReactDOM.render(<ExpenseForm />, document.getElementById("form"))
-})
+// document.addEventListener("DOMContentLoaded", e => {
+//   ReactDOM.render(<ExpenseForm />, document.getElementById("form"))
+// })
+
+export default ExpenseForm
+
